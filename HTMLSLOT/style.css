@@ -1,0 +1,111 @@
+* {
+  border-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+#stage {
+  margin: 0 auto;
+  width: 600px;
+  padding: 0 0 40px;
+}
+
+.perspective-on {
+  -webkit-perspective: 1000px;
+     -moz-perspective: 1000px;
+          perspective: 1000px;    /* Setting the perspective of the contents of the stage but not the stage itself*/
+}
+
+#slot {
+  margin: 0 auto 0;
+  width: 450px;
+  height: 220px;
+  padding-top: 200px;
+  /* Ensure that we're in 3D space */
+  transform-style: preserve-3d;
+}
+
+.ring {
+  margin: 0 auto;
+  height: 80px;
+  width: 90px;
+  float: left;
+  transform-style: preserve-3d;
+
+}
+.fruit {
+  position: absolute;
+  width: 90px;
+  height: 80px;
+  box-sizing: border-box;
+  opacity: 0.9;
+  color: rgba(0,0,0,0.9);
+  background: #fff;
+  border: solid 2px #000;
+  -webkit-backface-visibility: hidden;
+     -moz-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+
+.go {
+  padding:10px 30px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+/*=====*/
+.spin     { transform: rotateX(-3599deg); }
+/*=====*/
+
+@keyframes spin {
+    0%    { transform: rotateX(30deg); }
+    100%  { transform: rotateX(-3599deg); }
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.buttons .go {
+  width: calc((100% - 30px) / 3);
+  color: #fff;
+  border: 0;
+  background: crimson;
+  transition: all .2s ease-in-out;
+}
+.buttons .go:hover {
+  opacity: .9;
+}
+
+
+#slotPayout {
+  font-family: Arial;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+}
+
+#slotPayout > div {
+  display: flex;
+}
+
+#slotPayout input {
+  flex: 1;
+}
+
+#slotPayout label {
+  background: #333;
+  color: #fff;
+  width: 150px;
+  padding: 10px;
+  line-height: 27px;
+}
+#slotPayout > div:not(:last-of-type) label {
+  border-bottom: 1px solid #fff;
+}

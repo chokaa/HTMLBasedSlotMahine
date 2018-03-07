@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Slot machine</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+         <link rel="stylesheet" href="style.css">
+        <script src="slot.js"></script>
+    </head>
+<body>
+
+	<div id="stage" class="perspective-on">
+		  <div id="slot">
+			    <div id="ring0" class="ring"></div>
+			    <div id="ring1" class="ring"></div>
+			    <div id="ring2" class="ring"></div>
+			    <div id="ring3" class="ring"></div>
+			    <div id="ring4" class="ring"></div>
+    		</div>
+  	<div>
+	
+	<div class="buttons">
+		<button class="go" id="spin">Spin</button>
+		<button class="go" id="betMax">Bet max</button>
+		<button class="go" id="betOne">Bet one</button>
+	</div>
+		<div id="slotPayout">
+			<div> <label>BET </label> <input class="go" type="text" id="bet" disabled="true"> </div>
+			<div> <label>WINNER PAID </label> <input class="go" type="text" id="winnerPaid" disabled="true"> </div>
+			<div> <label>CREDIT </label> <input class="go" type="text" id="credit" disabled="true"> </div>
+			
+		</div>
+	</div>
+
+</html>
