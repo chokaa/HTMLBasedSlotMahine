@@ -5,45 +5,44 @@
 body {
   margin: 0;
   padding: 0;
-}
-#stage {
-  margin: 0 auto;
-  width: 600px;
-  padding: 0 0 40px;
+  width: 100%;
+  height: 100%;
 }
 
 .perspective-on {
+  width: 100%;
+  height: 60%;
   -webkit-perspective: 1000px;
      -moz-perspective: 1000px;
           perspective: 1000px;    /* Setting the perspective of the contents of the stage but not the stage itself*/
 }
 
 #slot {
-  margin: 0 auto 0;
-  width: 450px;
-  height: 220px;
-  padding-top: 200px;
-  /* Ensure that we're in 3D space */
+  margin: auto auto;
+  height: 20vh;
   transform-style: preserve-3d;
+  padding-top: 20vh;
+  padding-bottom: 20vh;
+  display: flex;
+  width: 60%;
 }
 
 .ring {
   margin: 0 auto;
-  height: 80px;
-  width: 90px;
+  height: 82px;
   float: left;
   transform-style: preserve-3d;
-
+  width: 100%;
 }
 .fruit {
   position: absolute;
-  width: 90px;
-  height: 80px;
+  height: 82px;
   box-sizing: border-box;
   opacity: 0.9;
   color: rgba(0,0,0,0.9);
   background: #fff;
   border: solid 2px #000;
+  width: 100%;
   -webkit-backface-visibility: hidden;
      -moz-backface-visibility: hidden;
           backface-visibility: hidden;

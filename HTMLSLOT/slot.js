@@ -7,6 +7,17 @@ const REEL_RADIUS = 150;
 
 var winningArray = [];
 
+function createElements () {
+	var rings = document.getElementById('slot');
+
+	for (var i = 0; i < NUMBER_OF_WHEELS; i ++) {
+		var ring = document.createElement('div');
+		ring.id = `ring${i}`;
+		ring.className = `ring`;
+		rings.append(ring);
+	}
+}
+
 
 
 function createFruits (ring) {
@@ -42,7 +53,7 @@ function spin(timer) {
 	var rings = document.getElementById('slot');
 
 
-    for(let i = 0; i < NUMBER_OF_WHEELS; i ++) {
+	for(let i = 0; i < NUMBER_OF_WHEELS; i ++) {
 		$('#ring'+i)
 		.css('animation','')
 		.attr('class','ring');
@@ -52,7 +63,7 @@ function spin(timer) {
 
 
 	//set new random fruits and fill winning array with arrays of elements
-	for(var i = 0; i < rings.childElementCount; i ++) {
+	for(var i = 0; i < NUMBER_OF_WHEELS; i ++) {
 
 		var ringValueArray = [];
 
@@ -87,9 +98,9 @@ function spin(timer) {
 
 
 	setTimeout(function(){
-		for(var i = 0; i < rings.childElementCount; i ++) {
+		for(var i = 0; i < NUMBER_OF_WHEELS; i ++) {
 			$('#ring'+i)
-			.css('animation','back-spin 1s, spin'+ ' ' + (timer + i*0.5) + 's')
+			.css('animation','back-spin '+timer.toString()+'s, spin'+ ' ' + (timer + i*0.5) + 's')
 			.attr('class','ring spin');
 		}
 	},100)
@@ -150,9 +161,9 @@ function calculateIncome(timer){
 
 }
 
-
 $(document).ready(function() {
 
+	createElements();
 	// initiate fruit 
  	for(let i = 0; i < NUMBER_OF_WHEELS; i++)
  		createFruits($('#ring'+i.toString()));
@@ -177,7 +188,7 @@ $(document).ready(function() {
 	 		credit-=bet;
 	 		$('#credit').val(credit);
 
-	 		var timer = 2;
+	 		var timer = 1;
 	 		spin(timer);
 		}
 
